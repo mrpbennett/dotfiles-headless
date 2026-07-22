@@ -21,7 +21,8 @@ plugins=(
   bashmarks
 )
 
-source "$OSG"/oh-my-bash.sh
+OSH_THEME=""
+[[ -f "$OSH/oh-my-bash.sh" ]] && source "$OSH/oh-my-bash.sh"
 
 if [[ -n $SSH_CONNECTION ]]; then
   export EDITOR='nvim'
