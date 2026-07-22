@@ -48,3 +48,4 @@ TPM_DIR="$HOME/.tmux/plugins/tpm"
 "$MISE_BIN" exec -- "$TPM_DIR/bin/install_plugins"
 
 echo "Done. Log out and back in before using Docker without sudo."
+source ~/.bashrc
