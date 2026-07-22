@@ -50,5 +50,9 @@ TPM_DIR="$HOME/.tmux/plugins/tpm"
 [[ -d $TPM_DIR ]] || git clone --depth 1 https://github.com/tmux-plugins/tpm "$TPM_DIR"
 "$MISE_BIN" exec -- "$TPM_DIR/bin/install_plugins"
 
+echo "✓ Installing TailScale..."
+curl -fsSL https://tailscale.com/install.sh | sh
+sudo systemctl enable --now tailscaled
+
 echo "Done. Log out and back in before using Docker without sudo."
 source ~/.bashrc
