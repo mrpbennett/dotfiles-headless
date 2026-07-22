@@ -26,6 +26,9 @@ if [[ -z $MISE_BIN ]]; then
   MISE_BIN="$HOME/.local/bin/mise"
 fi
 
+echo "✓ Installing oh-my-bash..."
+[[ -d $HOME/.oh-my-bash ]] || bash -c "$(curl -fsSL https://raw.githubusercontent.com/ohmybash/oh-my-bash/master/tools/install.sh)" "" --unattended
+
 if [[ -f $HOME/.bashrc && ! -L $HOME/.bashrc ]]; then
   [[ ! -e $HOME/.bashrc.bak ]] || {
     echo "$HOME/.bashrc.bak already exists" >&2
