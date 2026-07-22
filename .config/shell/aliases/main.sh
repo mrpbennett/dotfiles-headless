@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 # FILE SYSTEM ---
 alias ls='eza -lh --group-directories-first --icons=auto'
 alias lsa='ls -a'
@@ -17,10 +19,7 @@ alias e="exit"  # a swifter exit
 alias v="nvim"  # quicker nvim
 alias bt="btop" # better activity monitor
 alias t="tmux"  # quicker tmux
-
 alias cat="bat"     # a better cat
-alias curl="curlie" # a better curl
-
 alias lzg='lazygit'
 alias lzd='lazydocker'
 

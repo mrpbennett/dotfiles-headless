@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 SHELL_DIR=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)
 
 # INIT

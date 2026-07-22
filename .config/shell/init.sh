@@ -1,4 +1,4 @@
-export PATH="$HOME/.local/bin:$PATH"
+#!/usr/bin/env bash
 
 command -v mise >/dev/null 2>&1 && eval "$(mise activate bash)"
 command -v atuin >/dev/null 2>&1 && eval "$(atuin init bash)"
