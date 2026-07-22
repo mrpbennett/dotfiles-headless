@@ -1,0 +1,23 @@
+gui:
+  border: rounded
+  wrapMainPanel: true
+  theme:
+    activeBorderColor: [green, bold]
+    inactiveBorderColor: [white]
+    selectedLineBgColor: [blue]
+    optionsTextColor: [blue]
+logs:
+  since: 60m
+commandTemplates:
+  dockerCompose: docker compose
+os:
+  openCommand: xdg-open {{filename}}
+  openLinkCommand: xdg-open {{link}}
+stats:
+  graphs:
+    - caption: CPU (%)
+      statPath: DerivedStats.CPUPercentage
+      color: blue
+    - caption: Memory (%)
+      statPath: DerivedStats.MemoryPercentage
+      color: green

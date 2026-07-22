@@ -1,0 +1,4 @@
+os:
+  edit: "nvim {{filename}}"
+  editInTerminal: true
+  open: "nvim {{filename}}"

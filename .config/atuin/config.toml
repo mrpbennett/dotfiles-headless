@@ -1,0 +1,29 @@
+data_dir = "~/.local/share/atuin"
+db_path = "~/.history.db"
+key_path = "~/.key"
+session_path = "~/.session"
+dialect = "uk"
+timezone = "local"
+auto_sync = true
+update_check = true
+search_mode = "daemon-fuzzy"
+enter_accept = true
+
+[sync]
+records = true
+
+[theme]
+name = "marine"
+enabled = true
+autostart = true
+
+[search]
+filters = ["global", "host", "session", "session-preload", "workspace", "directory"]
+
+[tmux]
+enabled = true
+width = "80%"
+height = "60%"
+
+[ai]
+enabled = true
