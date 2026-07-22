@@ -1,0 +1,29 @@
+[tools]
+node = "lts"
+python = "latest"
+go = "latest"
+
+# .config/
+neovim = "latest"
+tmux = "latest"
+yazi = "latest"
+starship = "latest"
+lazygit = "latest"
+lazydocker = "latest"
+atuin = "latest"
+btop = "latest"
+curlie = "latest"
+
+# .
+eza = "latest"
+gh = "latest"
+zoxide = "latest"
+ripgrep = "latest"
+jq = "latest"
+fzf = "latest"
+fd = "latest"
+bat = "latest"
+
+# ai
+opencode = "latest"
+claude-code = "latest"

@@ -1,0 +1,8 @@
+^/install\.sh$
+^/README\.md$
+^/LICENSE$
+^/\.git
+^/\.gitignore$
+^/\.superpowers
+^/docs
+^/tests
