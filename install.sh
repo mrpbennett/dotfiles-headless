@@ -1,7 +1,13 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-DOTFILES_DIR=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)
+REPO_DIR="$HOME/.local/share/dotfiles-headless"
+
+DOTFILES_DIR=$(cd -- "$(dirname -- "${BASH_SOURCE[0]:-$REPO_DIR}")" 2>/dev/null && pwd || true)
+if [[ ! -d $DOTFILES_DIR/.git ]]; then
+  DOTFILES_DIR=$REPO_DIR
+  [[ -d $DOTFILES_DIR/.git ]] || git clone --depth 1 https://github.com/mrpbennett/dotfiles-headless.git "$DOTFILES_DIR"
+fi
 
 sudo apt-get update
 
