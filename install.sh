@@ -19,6 +19,9 @@ sudo systemctl enable --now docker nginx
 sudo groupadd -f docker
 sudo usermod -aG docker "$(id -un)"
 
+echo "✓ Installing atuin..."
+curl --proto '=https' --tlsv1.2 -LsSf https://setup.atuin.sh | sh -s -- --non-interactive
+
 echo "✓ Installing mise package manager..."
 MISE_BIN=$(command -v mise || true)
 if [[ -z $MISE_BIN ]]; then
@@ -26,19 +29,9 @@ if [[ -z $MISE_BIN ]]; then
   MISE_BIN="$HOME/.local/bin/mise"
 fi
 
-echo "✓ Installing oh-my-bash..."
-[[ -d $HOME/.oh-my-bash ]] || bash -c "$(curl -fsSL https://raw.githubusercontent.com/ohmybash/oh-my-bash/master/tools/install.sh)" "" --unattended
-
-if [[ -f $HOME/.bashrc && ! -L $HOME/.bashrc ]]; then
-  [[ ! -e $HOME/.bashrc.bak ]] || {
-    echo "$HOME/.bashrc.bak already exists" >&2
-    exit 1
-  }
-  mv "$HOME/.bashrc" "$HOME/.bashrc.bak"
-fi
-
 echo "✓ Running Stow for symlinks..."
 stow --no-folding --restow --dir "$DOTFILES_DIR" --target "$HOME" .
+ln -snf "$HOME/.config/shell/inputrc.sh" "$HOME/.inputrc"
 
 echo "✓ Installing packages via mise..."
 "$MISE_BIN" trust -y "$HOME/.config/mise/config.toml"

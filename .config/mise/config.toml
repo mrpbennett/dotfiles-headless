@@ -10,9 +10,7 @@ yazi = "latest"
 starship = "latest"
 lazygit = "latest"
 lazydocker = "latest"
-atuin = "latest"
 btop = "latest"
-curlie = "latest"
 
 # .
 eza = "latest"
