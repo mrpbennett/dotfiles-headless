@@ -1,5 +1,5 @@
 export EDITOR="nvim"
-export PATH="$PATH:$HOME/.local/bin"
+export PATH="$PATH:$HOME/.local/bin:$HOME/.atuin/bin"
 export SUDO_EDITOR="$EDITOR"
 export BAT_THEME=ansi
 export MANROFFOPT="-c"
