@@ -47,6 +47,16 @@ echo "✓ Installing TailScale..."
 curl -fsSL https://tailscale.com/install.sh | sh
 sudo systemctl enable --now tailscaled
 
+# Install oh-my-zsh
+if [ ! -d "$HOME/.oh-my-zsh" ]; then
+  git clone --depth 1 https://github.com/ohmyzsh/ohmyzsh.git "$HOME/.oh-my-zsh"
+fi
+
+# Install oh-my-zsh plugins
+ZSH_CUSTOM="${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}"
+[ -d "$ZSH_CUSTOM/plugins/zsh-autosuggestions" ] || git clone https://github.com/zsh-users/zsh-autosuggestions "$ZSH_CUSTOM/plugins/zsh-autosuggestions"
+[ -d "$ZSH_CUSTOM/plugins/zsh-syntax-highlighting" ] || git clone https://github.com/zsh-users/zsh-syntax-highlighting.git "$ZSH_CUSTOM/plugins/zsh-syntax-highlighting"
+
 sudo chsh -s "$(which zsh)" "$(id -un)"
 
 echo "Done. Log out and back in before using Docker without sudo."
