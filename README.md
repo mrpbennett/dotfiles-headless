@@ -1,10 +1,10 @@
-# dotfiles-headless
+# sdots
 
-Ubuntu Server dotfiles managed with GNU Stow and mise.
+dotfiles for Ubuntu Server managed with GNU Stow and mise.
 
 ## What it sets up
 
-- **Shell**: Bash with starship prompt, fzf, eza, zoxide, tmux, bat, ripgrep, fd, jq, curlie
+- **Shell**: Zsh with starship prompt, fzf, eza, zoxide, tmux, bat, ripgrep, fd, jq, curlie
 - **Editors**: Neovim
 - **Agents**: opencode, claude-code
 - **Dev tools**: mise, Docker, Docker Compose, nginx, GitHub CLI (`gh`), lazygit, lazydocker, atuin, btop, yazi, Sesh
