@@ -8,6 +8,9 @@ format = "[$directory$git_branch$git_status]($style)$line_break$character"
 error_symbol = "[✗](bold red)"
 success_symbol = "[➜](bold green)"
 
+vimcmd_symbol = '[N](bold blue) '
+vimcmd_visual_symbol = '[V](bold yellow)'
+
 [directory]
 truncation_length = 2
 truncation_symbol = "…/"
