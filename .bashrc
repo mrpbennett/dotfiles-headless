@@ -6,9 +6,9 @@ case $- in
 *) return ;;
 esac
 
+DOTFILES_SHELL_DIR="$HOME/.config/shell"
+source "$DOTFILES_SHELL_DIR/all.sh"
+
 if [[ -z $TMUX ]]; then
   t
 fi
-
-DOTFILES_SHELL_DIR="$HOME/.config/shell"
-source "$DOTFILES_SHELL_DIR/all.sh"
