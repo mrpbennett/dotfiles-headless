@@ -30,6 +30,9 @@ if [[ -z $MISE_BIN ]]; then
 fi
 
 echo "✓ Running Stow for symlinks..."
+for f in .bashrc .bash_profile .hushlogin; do
+  [[ ! -L "$HOME/$f" && -f "$HOME/$f" ]] && rm -f "$HOME/$f"
+done
 stow --no-folding --restow --dir "$DOTFILES_DIR" --target "$HOME" .
 ln -snf "$HOME/.config/shell/inputrc.sh" "$HOME/.inputrc"
 

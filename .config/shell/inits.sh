@@ -1,6 +1,10 @@
 _shell_name="${ZSH_VERSION:+zsh}"
 _shell_name="${_shell_name:-bash}"
 
+if command -v atuin &>/dev/null; then
+  eval "$(atuin init "$_shell_name")"
+fi
+
 if command -v mise &>/dev/null; then
   eval "$(mise activate "$_shell_name")"
 fi
