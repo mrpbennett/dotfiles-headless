@@ -11,6 +11,7 @@ starship = "latest"
 lazygit = "latest"
 lazydocker = "latest"
 btop = "latest"
+hunk = "latest"
 
 # .
 eza = "latest"
