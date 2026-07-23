@@ -22,6 +22,10 @@ if command -v try &>/dev/null; then
   eval "$(try init ~/Work/tries)"
 fi
 
+if command -v atuin &>/dev/null; then
+  eval "$(atuin init "$_shell_name")"
+fi
+
 if command -v fzf &>/dev/null; then
   if [[ "$_shell_name" == "bash" ]]; then
     if [[ -f /usr/share/fzf/completion.bash ]]; then
