@@ -15,7 +15,7 @@ Core system packages (Docker, Docker Compose, nginx, build-essential, git, curl,
 ## Install
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/mrpbennett/dotfiles-headless/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/mrpbennett/sdots/main/install.sh | bash
 ```
 
 Log out and back in after installation before using Docker without `sudo`.
