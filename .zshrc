@@ -1,13 +1,8 @@
-#!/usr/bin/env bash
-export PATH="$HOME/.local/bin:$PATH"
 
 case $- in
 *i*) ;;
 *) return ;;
 esac
-
-# PATH TO YOUR OH MY ZSH INSTALLATION.
-export ZSH="$HOME/.oh-my-zsh"
 
 plugins=(
   git
