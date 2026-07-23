@@ -4,6 +4,8 @@ case $- in
 *) return ;;
 esac
 
+export ZSH="$HOME/.oh-my-zsh"
+
 plugins=(
   git
   zsh-syntax-highlighting
@@ -27,8 +29,8 @@ zle -N zle-keymap-select
 zle -N zle-line-init
 # VIM MODE END ---
 
+source "$HOME/.config/shell/all.sh"
+
 if [[ -z $TMUX ]]; then
   t
 fi
-
-source "$HOME/.config/shell/all.sh"
