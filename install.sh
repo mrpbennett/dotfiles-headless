@@ -30,9 +30,6 @@ echo "✓ Running Stow for symlinks..."
 stow --no-folding --restow --dir "$DOTFILES_DIR" --target "$HOME" .
 ln -snf "$HOME/.config/shell/inputrc.sh" "$HOME/.inputrc"
 
-echo "✓ Installing atuin..."
-curl --proto '=https' --tlsv1.2 -LsSf https://setup.atuin.sh | sh -s -- --non-interactive
-
 echo "✓ Installing packages via mise..."
 "$MISE_BIN" trust -y "$HOME/.config/mise/config.toml"
 "$MISE_BIN" install -y
