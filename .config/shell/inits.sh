@@ -1,3 +1,4 @@
+_shell_name="${ZSH_VERSION:+zsh}"
 _shell_name="${_shell_name:-bash}"
 
 if command -v atuin &>/dev/null; then
@@ -32,6 +33,13 @@ if command -v fzf &>/dev/null; then
     fi
     if [[ -f /usr/share/fzf/key-bindings.bash ]]; then
       source /usr/share/fzf/key-bindings.bash
+    fi
+  elif [[ "$_shell_name" == "zsh" ]]; then
+    if [[ -f /usr/share/fzf/completion.zsh ]]; then
+      source /usr/share/fzf/completion.zsh
+    fi
+    if [[ -f /usr/share/fzf/key-bindings.zsh ]]; then
+      source /usr/share/fzf/key-bindings.zsh
     fi
   fi
 fi

@@ -13,7 +13,7 @@ sudo apt-get update
 
 echo "✓ Installing apt packages, including Docker & Nginx..."
 sudo env DEBIAN_FRONTEND=noninteractive apt-get install -y \
-  build-essential curl git stow docker.io docker-compose-v2 nginx
+  build-essential curl git stow docker.io docker-compose-v2 nginx zsh
 
 sudo systemctl enable --now docker nginx
 sudo groupadd -f docker
@@ -50,5 +50,7 @@ echo "✓ Installing TailScale..."
 curl -fsSL https://tailscale.com/install.sh | sh
 sudo systemctl enable --now tailscaled
 
+sudo chsh -s "$(which zsh)" "$(id -un)"
+
 echo "Done. Log out and back in before using Docker without sudo."
-source ~/.bashrc
+source ~/.zshrc

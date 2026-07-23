@@ -10,7 +10,7 @@ search_mode = "daemon-fuzzy"
 enter_accept = true
 
 [sync]
-records = true
+records = false
 
 [theme]
 name = "marine"
@@ -18,7 +18,14 @@ enabled = true
 autostart = true
 
 [search]
-filters = ["global", "host", "session", "session-preload", "workspace", "directory"]
+filters = [
+  "global",
+  "host",
+  "session",
+  "session-preload",
+  "workspace",
+  "directory",
+]
 
 [tmux]
 enabled = true
