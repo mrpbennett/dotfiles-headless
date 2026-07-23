@@ -19,9 +19,6 @@ sudo systemctl enable --now docker nginx
 sudo groupadd -f docker
 sudo usermod -aG docker "$(id -un)"
 
-echo "✓ Installing atuin..."
-curl --proto '=https' --tlsv1.2 -LsSf https://setup.atuin.sh | sh -s -- --non-interactive
-
 echo "✓ Installing mise package manager..."
 MISE_BIN=$(command -v mise || true)
 if [[ -z $MISE_BIN ]]; then
@@ -30,11 +27,11 @@ if [[ -z $MISE_BIN ]]; then
 fi
 
 echo "✓ Running Stow for symlinks..."
-for f in .bashrc .bash_profile .hushlogin; do
-  [[ ! -L "$HOME/$f" && -f "$HOME/$f" ]] && rm -f "$HOME/$f"
-done
 stow --no-folding --restow --dir "$DOTFILES_DIR" --target "$HOME" .
 ln -snf "$HOME/.config/shell/inputrc.sh" "$HOME/.inputrc"
+
+echo "✓ Installing atuin..."
+curl --proto '=https' --tlsv1.2 -LsSf https://setup.atuin.sh | sh -s -- --non-interactive
 
 echo "✓ Installing packages via mise..."
 "$MISE_BIN" trust -y "$HOME/.config/mise/config.toml"
