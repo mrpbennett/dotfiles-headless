@@ -26,4 +26,4 @@ width = "80%"
 height = "60%"
 
 [ai]
-enabled = true
+enabled = false
