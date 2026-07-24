@@ -1,4 +1,3 @@
-<div align="center">
 ```
 ________  ________  ________  _________  ________
 |\   ____\|\   ___ \|\   __  \|\___   ___\\   ____\
@@ -9,7 +8,13 @@ ________  ________  ________  _________  ________
    |\_________\|_______|\|_______|    \|__| |\_________\
    \|_________|                             \|_________|
 ```
-</div>
+
+<p align="center">
+    <img alt="GNU Stow" src="https://img.shields.io/badge/managed_with-GNU_Stow-4CAF50?style=flat-square&logo=gnu&logoColor=white"/>
+    <img alt="Ubuntu" src="https://img.shields.io/badge/platform-ubuntu-000000?style=flat-square&logo=ubuntu&logoColor=white"/>
+    <img alt="zsh shell" src="https://img.shields.io/badge/shell-zsh-4FC3F7?style=flat-square"/>
+    <img alt="LazyVim" src="https://img.shields.io/badge/editor-LazyVim-7C3AED?style=flat-square"/>
+</p>
 
 dotfiles for Ubuntu Server managed with GNU Stow and mise.
 
@@ -33,35 +38,63 @@ Log out and back in after installation before using Docker without `sudo`.
 
 ## Tmux keybindings
 
-Leader key: `C-s` (replaces default `C-b`)
+<summary>All custom keybindings — prefix is <code>Ctrl+s</code></summary>
 
-| Key                        | Context      | Action                               |
-| -------------------------- | ------------ | ------------------------------------ |
-| `C-s`                      | prefix       | Send prefix (type literal `C-s`)     |
-| `q`                        | prefix       | Reload tmux config                   |
-| `?`                        | prefix       | Show keybinding help popup           |
-| `T`                        | prefix       | Launch sesh (fzf session picker)     |
-| **Pane navigation**        |              |                                      |
-| `h` / `j` / `k` / `l`      | prefix       | Select pane left / down / up / right |
-| `H` / `J` / `K` / `L`      | prefix       | Resize pane 5 cells (repeatable)     |
-| `x`                        | prefix       | Kill pane                            |
-| `\|` / `v`                 | prefix       | Split window horizontally            |
-| `-`                        | prefix       | Split window vertically              |
-| `f`                        | prefix       | Floating popup pane                  |
-| **Pane ops (no prefix)**   |              |                                      |
-| `M-Enter`                  | none         | Split vertical (`-v`)                |
-| `M-S-Enter`                | none         | Split horizontal (`-h`)              |
-| `M-Escape`                 | none         | Kill pane                            |
-| `C-M-arrows`               | none         | Select pane in direction             |
-| `C-M-S-arrows`             | none         | Resize pane 5 cells                  |
-| **Windows**                |              |                                      |
-| `c` / `t`                  | prefix       | New window (cwd)                     |
-| `r`                        | prefix       | Rename window                        |
-| `k`                        | prefix       | Kill window                          |
-| **Sessions**               |              |                                      |
-| `C`                        | prefix       | New session (cwd)                    |
-| `R`                        | prefix       | Rename session                       |
-| `K`                        | prefix       | Kill session                         |
-| **Copy mode (vi)**         |              |                                      |
-| `v`                        | copy-mode-vi | Begin selection                      |
-| `y`                        | copy-mode-vi | Copy selection & cancel              |
+### Config
+
+| Key          | Action                       |
+| ------------ | ---------------------------- |
+| `prefix + q` | Reload config                |
+| `prefix + ?` | Show all keybindings (popup) |
+
+### Pane splits
+
+| Key                   | Action                        |
+| --------------------- | ----------------------------- |
+| `prefix + \|`         | Split right                   |
+| `prefix + -`          | Split down                    |
+| `prefix + v`          | Split right                   |
+| `prefix + x`          | Kill pane                     |
+| `prefix + f`          | Floating shell popup (80×60%) |
+| `Alt + Enter`         | Split down (no prefix)        |
+| `Alt + Shift + Enter` | Split right (no prefix)       |
+| `Alt + Escape`        | Kill pane (no prefix)         |
+
+### Pane navigation
+
+| Key                    | Action                     |
+| ---------------------- | -------------------------- |
+| `prefix + h/j/k/l`     | Navigate panes (vim-style) |
+| `Ctrl + Alt + ←/→/↑/↓` | Navigate panes (no prefix) |
+
+### Pane resize
+
+| Key                            | Action                          |
+| ------------------------------ | ------------------------------- |
+| `prefix + H/J/K/L`             | Resize pane 5 cells             |
+| `Ctrl + Alt + Shift + ←/→/↑/↓` | Resize pane 5 cells (no prefix) |
+
+### Windows
+
+| Key                         | Action        |
+| --------------------------- | ------------- |
+| `prefix + c` / `prefix + t` | New window    |
+| `prefix + r`                | Rename window |
+| `prefix + k`                | Kill window   |
+
+### Sessions
+
+| Key          | Action                          |
+| ------------ | ------------------------------- |
+| `prefix + C` | New session                     |
+| `prefix + R` | Rename session                  |
+| `prefix + K` | Kill session                    |
+| `prefix + T` | Sesh session picker (fzf popup) |
+
+### Copy mode (vi)
+
+| Key          | Action                  |
+| ------------ | ----------------------- |
+| `prefix + [` | Enter copy mode         |
+| `v`          | Begin selection         |
+| `y`          | Copy selection and exit |
