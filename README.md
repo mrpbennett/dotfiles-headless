@@ -1,4 +1,15 @@
-# sdots
+<div align="center">
+```
+________  ________  ________  _________  ________
+|\   ____\|\   ___ \|\   __  \|\___   ___\\   ____\
+\ \  \___|\ \  \_|\ \ \  \|\  \|___ \  \_\ \  \___|_
+ \ \_____  \ \  \ \\ \ \  \\\  \   \ \  \ \ \_____  \
+  \|____|\  \ \  \_\\ \ \  \\\  \   \ \  \ \|____|\  \
+    ____\_\  \ \_______\ \_______\   \ \__\  ____\_\  \
+   |\_________\|_______|\|_______|    \|__| |\_________\
+   \|_________|                             \|_________|
+```
+</div>
 
 dotfiles for Ubuntu Server managed with GNU Stow and mise.
 
@@ -19,3 +30,38 @@ curl -fsSL https://raw.githubusercontent.com/mrpbennett/sdots/main/install.sh | 
 ```
 
 Log out and back in after installation before using Docker without `sudo`.
+
+## Tmux keybindings
+
+Leader key: `C-s` (replaces default `C-b`)
+
+| Key                        | Context      | Action                               |
+| -------------------------- | ------------ | ------------------------------------ |
+| `C-s`                      | prefix       | Send prefix (type literal `C-s`)     |
+| `q`                        | prefix       | Reload tmux config                   |
+| `?`                        | prefix       | Show keybinding help popup           |
+| `T`                        | prefix       | Launch sesh (fzf session picker)     |
+| **Pane navigation**        |              |                                      |
+| `h` / `j` / `k` / `l`      | prefix       | Select pane left / down / up / right |
+| `H` / `J` / `K` / `L`      | prefix       | Resize pane 5 cells (repeatable)     |
+| `x`                        | prefix       | Kill pane                            |
+| `\|` / `v`                 | prefix       | Split window horizontally            |
+| `-`                        | prefix       | Split window vertically              |
+| `f`                        | prefix       | Floating popup pane                  |
+| **Pane ops (no prefix)**   |              |                                      |
+| `M-Enter`                  | none         | Split vertical (`-v`)                |
+| `M-S-Enter`                | none         | Split horizontal (`-h`)              |
+| `M-Escape`                 | none         | Kill pane                            |
+| `C-M-arrows`               | none         | Select pane in direction             |
+| `C-M-S-arrows`             | none         | Resize pane 5 cells                  |
+| **Windows**                |              |                                      |
+| `c` / `t`                  | prefix       | New window (cwd)                     |
+| `r`                        | prefix       | Rename window                        |
+| `k`                        | prefix       | Kill window                          |
+| **Sessions**               |              |                                      |
+| `C`                        | prefix       | New session (cwd)                    |
+| `R`                        | prefix       | Rename session                       |
+| `K`                        | prefix       | Kill session                         |
+| **Copy mode (vi)**         |              |                                      |
+| `v`                        | copy-mode-vi | Begin selection                      |
+| `y`                        | copy-mode-vi | Copy selection & cancel              |
