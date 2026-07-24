@@ -38,7 +38,7 @@ Leader key: `C-s` (replaces default `C-b`)
 | Key                        | Context      | Action                               |
 | -------------------------- | ------------ | ------------------------------------ |
 | `C-s`                      | prefix       | Send prefix (type literal `C-s`)     |
-| `R`                        | prefix       | Reload tmux config                   |
+| `q`                        | prefix       | Reload tmux config                   |
 | `?`                        | prefix       | Show keybinding help popup           |
 | `T`                        | prefix       | Launch sesh (fzf session picker)     |
 | **Pane navigation**        |              |                                      |
@@ -57,17 +57,11 @@ Leader key: `C-s` (replaces default `C-b`)
 | **Windows**                |              |                                      |
 | `c` / `t`                  | prefix       | New window (cwd)                     |
 | `r`                        | prefix       | Rename window                        |
-| **Window nav (no prefix)** |              |                                      |
-| `M-1`–`M-9`                | none         | Select window 1–9                    |
-| `M-Left` / `M-Right`       | none         | Previous / next window               |
-| `M-S-Left` / `M-S-Right`   | none         | Swap window left / right             |
+| `k`                        | prefix       | Kill window                          |
 | **Sessions**               |              |                                      |
 | `C`                        | prefix       | New session (cwd)                    |
-| `S`                        | prefix       | Rename session                       |
-| `q`                        | prefix       | Kill session                         |
-| `P` / `N`                  | prefix       | Previous / next session              |
-| `M-Up` / `M-Down`          | none         | Previous / next session              |
+| `R`                        | prefix       | Rename session                       |
+| `K`                        | prefix       | Kill session                         |
 | **Copy mode (vi)**         |              |                                      |
 | `v`                        | copy-mode-vi | Begin selection                      |
-| `C-v`                      | copy-mode-vi | Rectangle toggle                     |
 | `y`                        | copy-mode-vi | Copy selection & cancel              |
