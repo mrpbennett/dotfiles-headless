@@ -36,6 +36,18 @@ curl -fsSL https://raw.githubusercontent.com/mrpbennett/sdots/main/install.sh | 
 
 Log out and back in after installation before using Docker without `sudo`.
 
+## Stow maintenance
+
+All symlinks are managed with `--no-folding` so stow creates real directories and only symlinks individual files. This prevents conflicts when multiple tools share a parent like `~/.config/`.
+
+| Command | Purpose |
+| ------- | ------- |
+| `stow --no-folding --restow --dir "$DOTFILES_DIR" --target "$HOME" .` | Relink everything (safe to re-run after adding/removing files) |
+| `stow --no-folding --simulate --dir "$DOTFILES_DIR" --target "$HOME" .` | Dry run — preview what would change without touching the filesystem |
+| `stow --delete --dir "$DOTFILES_DIR" --target "$HOME" .` | Remove all managed symlinks (leaves real files untouched) |
+
+`$DOTFILES_DIR` is wherever you cloned the repo — typically `~/.local/share/sdots`.
+
 ## Tmux keybindings
 
 <summary>All custom keybindings — prefix is <code>Ctrl+s</code></summary>
